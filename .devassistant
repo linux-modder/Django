@@ -1,0 +1,21 @@
+dependencies:
+- rpm:
+  - python3
+- if $venv and not $py3:
+  - rpm:
+    - python-virtualenv
+- if not $venv:
+  - rpm:
+    - python${py3}-django
+- rpm:
+  - docker-io
+devassistant_version: 0.9.3
+original_kwargs:
+  docker: true
+  github: !!python/unicode 'linux-modder'
+  name: !!python/unicode '/home/Corey/Django'
+  py3: 3
+  venv: !!python/unicode 'venv'
+project_type:
+- python
+- django
